@@ -9,15 +9,8 @@ namespace Renting.Server.Dtos
         public DateTime StartDate { get; set; }
         public DateTime ExpectedEndDate { get; set; }
         public DateTime? ActualEndDate { get; set; }
-
-        public string CustomerName { get; set; }
-        public string ItemName { get; set; }
-        //public int? CustomerId { get; set; }
-        //public Customer? Customer { get; set; }
-
-        //public int? ItemId { get; set; }
-        //public Item? Item { get; set; }
-
-        //public List<Penalty> Penalties { get; set; } = new List<Penalty>();
+        public CustomerDto Customer { get; set; }
+        public ItemDto Item { get; set; }
+        public List<PenaltyDto> Penalties { get; set; } = new List<PenaltyDto>();
     }
 }

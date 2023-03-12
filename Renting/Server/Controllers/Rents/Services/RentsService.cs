@@ -56,17 +56,5 @@ namespace Renting.Server.Controllers.Rents.Services
             
             return _mapper.Map<List<RentDto>>(rents);
         }
-
-        public RentDto MapToDto(Rent rent)
-        {
-            return new RentDto
-            {
-                ActualEndDate = rent.ActualEndDate,
-                CustomerName = rent?.Customer?.Name,
-                ExpectedEndDate = rent.ExpectedEndDate,
-                ItemName = rent?.Item?.Name,
-                StartDate = rent.StartDate,
-            };
-        }
     }
 }
