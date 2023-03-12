@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Lab9.App.DAL.Entities;
@@ -22,10 +23,28 @@ namespace Renting.Server.Controllers.Rents
             _rentsService = rentsService;
         }
 
-        [HttpGet]
-        public async Task<RentDto> Get([FromQuery] int id, CancellationToken ct)
+        /// <summary>
+        /// Получение всех аренд
+        /// </summary>
+        /// <returns>Returns List<RentDto></returns>
+        /// <response code="200">Success</response>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpGet("Rents")]
+        public async Task<List<RentDto>> GetRents(CancellationToken ct)
         {
-            return await _rentsService.Get(id, ct);
+            return await _rentsService.GetRents(ct);
+        }
+
+        /// <summary>
+        /// Получение аренды
+        /// </summary>
+        /// <returns>Returns RentDto</returns>
+        /// <response code="200">Success</response>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpGet("Rent")]
+        public async Task<RentDto> GetRent([FromQuery] int id, CancellationToken ct)
+        {
+            return await _rentsService.GetRent(id, ct);
         }
     }
 }
