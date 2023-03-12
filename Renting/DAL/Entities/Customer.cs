@@ -1,17 +1,23 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
-namespace Lab9.App.DAL.Entities
+namespace Renting.DAL.Entities
 {
-    public class Customer
+    public class Customer : DbItem
     {
-        public int Id { get; set; }
         public string Name { get; set; }
+        public string? Surname { get; set; }
         public int? Age { get; set; }
         public int? Height { get; set; }
         public int? Weight { get; set; }
         public double? ShoeSizeRu { get; set; }
         public double? ClothingSizeRu { get; set; }
 
-        public List<Rent> Rents { get; set; } = new List<Rent>();
+        [JsonIgnore]
+        public int? RentId { get; set; }
+        [JsonIgnore]
+        public Rent? Rent { get; set; }
+
+        public List<Discount> Discounts { get; set; } = new List<Discount>();
     }
 }

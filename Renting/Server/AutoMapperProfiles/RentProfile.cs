@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 
-using Lab9.App.DAL.Entities;
-
+using Renting.DAL.Entities;
 using Renting.Server.Dtos;
 
 namespace Renting.Server.AutoMapperProfiles

@@ -1,12 +1,18 @@
-namespace Lab9.App.DAL.Entities
-{
-    public class Penalty
-    {
-        public int Id { get; set; }
-        public string Type { get; set; }
-        public decimal? Price { get; set; }
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
+namespace Renting.DAL.Entities
+{
+    public class Penalty : DbItem
+    {
+        public string? Name { get; set; }
+        public decimal Value { get; set; }
+
+        //[JsonIgnore]
         public int? RentId { get; set; }
+        //[JsonIgnore]
         public Rent? Rent { get; set; }
+
+        public List<PenaltyType> PenaltyTypes { get; set; } = new List<PenaltyType>();
     }
 }

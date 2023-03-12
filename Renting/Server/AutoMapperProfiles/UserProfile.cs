@@ -5,12 +5,11 @@ using Renting.Server.Dtos;
 
 namespace Renting.Server.AutoMapperProfiles
 {
-    public class PenaltyProfile : Profile
+    public class UserProfile : Profile
     {
-        public PenaltyProfile()
+        public UserProfile()
         {
-
-            CreateMap<Penalty, PenaltyDto>(MemberList.Destination).ReverseMap();
+            CreateMap<User, UserDto>(MemberList.Destination).ReverseMap();
         }
     }
 }

@@ -1,12 +1,13 @@
-﻿using Lab9.App.DAL.Entities;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Renting.Server.Dtos
 {
     public class PenaltyDto
     {
-        public int Id { get; set; }
-        public string Type { get; set; }
-        public decimal? Price { get; set; }
-        //public RentDto Rent { get; set; }
+        public string? Name { get; set; }
+        public decimal Value { get; set; }
+
+        public List<PenaltyTypeDto> PenaltyTypes { get; set; } = new List<PenaltyTypeDto>();
     }
 }
