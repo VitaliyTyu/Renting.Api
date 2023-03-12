@@ -20,20 +20,17 @@ namespace Lab9.App.DAL
             var category1 = new Category() { Name = "Лыжи", Note = "Лыжи", Description = "Лыжи" };
             var category2 = new Category() { Name = "Одежда", Note = "Одежда", Description = "Одежда" };
             var category3 = new Category() { Name = "Другое", Note = "Другое", Description = "Другое" };
-            //await db.Categories.AddRangeAsync(category1, category2, category3);
 
 
 
             var сountryOfOrigin1 = new CountryOfOrigin() { Name = "Китай", ApprovalRating = 8 };
             var сountryOfOrigin2 = new CountryOfOrigin() { Name = "Россия", ApprovalRating = 7 };
             var сountryOfOrigin3 = new CountryOfOrigin() { Name = "Норвегия", ApprovalRating = 6 };
-            //await db.CountriesOfOrigin.AddRangeAsync(сountryOfOrigin1, сountryOfOrigin2, сountryOfOrigin3);
 
 
 
             var warehouse1 = new Warehouse() { Name = "Первый склад", Address = "ул Пушкина" };
             var warehouse2 = new Warehouse() { Name = "Второй склад", Address = "ул Пермская" };
-            //await db.Warehouses.AddRangeAsync(warehouse1, warehouse2);
 
 
 
@@ -82,7 +79,6 @@ namespace Lab9.App.DAL
                 Category = category3,
             };
 
-            //await db.Items.AddRangeAsync(item1, item2, item3, item4);
 
 
             var penaltyType1 = new PenaltyType() { Name = "Полная поломка снаряжения", Description = "Полная поломка снаряжения", HarmLevel = HarmLevel.High };
@@ -171,7 +167,6 @@ namespace Lab9.App.DAL
                 Rents = new List<Rent>() { rent1, rent2, rent3}
             };
 
-            //await db.Rents.AddRangeAsync(rent1, rent2, rent3);
             await db.Users.AddAsync(user);
             await db.SaveChangesAsync();
         }
